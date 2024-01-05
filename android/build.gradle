@@ -9,6 +9,9 @@ buildscript {
     repositories {
         mavenCentral()
         google()
+        flatDir {
+            dirs 'libs'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.0.0'
@@ -52,7 +55,8 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
-    implementation ('org.jitsi.react:jitsi-meet-sdk:8.1.2') { transitive = true }
+    implementation(name: 'jitsi-meet-sdk-99.0.0', ext: 'aar')
+    // implementation ('org.jitsi.react:jitsi-meet-sdk:8.1.2') { transitive = true }
 
     // Firebase
     implementation 'com.google.firebase:firebase-dynamic-links:16.1.5'
